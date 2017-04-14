@@ -1,0 +1,12 @@
+{
+    "name": "webup/laravel-tools",
+    "description": "Some tools for Laravel: flash messages, breadcrumb...",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Baptiste DUCATEL",
+            "email": "baptiste@agence-webup.com"
+        }
+    ],
+    "require": {}
+}
