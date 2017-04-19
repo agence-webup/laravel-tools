@@ -15,7 +15,7 @@ class BreadcrumbServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('breadcrumb', function ($app) {
-            return new Breadcrum();
+            return new Breadcrumb();
         });
     }
 
@@ -27,6 +27,10 @@ class BreadcrumbServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // View::composer('elements.breadcrumb', BreadcrumbComposer::class);
+        $this->loadViewsFrom(__DIR__.'/../views', 'tools');
+
+        $this->publishes([
+            __DIR__.'/../views' => resource_path('views/vendor/tools'),
+        ], 'tools');
     }
 }
