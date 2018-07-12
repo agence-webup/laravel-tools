@@ -1,6 +1,6 @@
 <?php
 
-namespace Webup\LaravelTools\Breadcrumb\Facades;
+namespace Webup\LaravelTools\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

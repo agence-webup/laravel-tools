@@ -1,11 +1,12 @@
 <?php
 
-namespace Webup\LaravelTools\Flash;
+namespace Webup\LaravelTools;
 
 use Illuminate\Support\ServiceProvider;
-use Webup\LaravelTools\Flash\Flash;
+use Webup\LaravelTools\Breadcrumb;
+use Webup\LaravelTools\Flash;
 
-class FlashServiceProvider extends ServiceProvider
+class ToolsServiceProvider extends ServiceProvider
 {
     /**
      * Register bindings in the container.
@@ -14,6 +15,10 @@ class FlashServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->singleton('breadcrumb', function ($app) {
+            return new Breadcrumb();
+        });
+
         $this->app->singleton('flash', function ($app) {
             return new Flash($app->make(\Illuminate\Session\Store::class));
         });
@@ -27,10 +32,10 @@ class FlashServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../views', 'tools');
+        $this->loadViewsFrom(__DIR__.'/views', 'tools');
 
         $this->publishes([
-            __DIR__.'/../views' => resource_path('views/vendor/tools'),
+            __DIR__.'/views' => resource_path('views/vendor/tools'),
         ], 'tools');
     }
 }

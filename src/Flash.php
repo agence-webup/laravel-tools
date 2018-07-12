@@ -1,5 +1,6 @@
 <?php
-namespace Webup\LaravelTools\Flash;
+
+namespace Webup\LaravelTools;
 
 use Illuminate\Session\Store;
 

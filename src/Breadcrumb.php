@@ -1,6 +1,6 @@
 <?php
 
-namespace Webup\LaravelTools\Breadcrumb;
+namespace Webup\LaravelTools;
 
 class Breadcrumb
 {

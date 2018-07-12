@@ -1,5 +1,5 @@
 <?php
-use Webup\LaravelTools\Breadcrumb\Facades\Breadcrumb;
+use Webup\LaravelTools\Facades\Breadcrumb;
 
 ?>
 <ol itemscope itemtype="http://schema.org/BreadcrumbList">
@@ -7,7 +7,7 @@ use Webup\LaravelTools\Breadcrumb\Facades\Breadcrumb;
     <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
         <a itemprop="item" href="{{ $item->url }}">
         <span itemprop="name">{{ $item->title }}</span></a>
-        <meta itemprop="position" content="{{ $i++ }}" />
+        <meta itemprop="position" content="{{ $i+1 }}" />
     </li>
     @endforeach
 </ol>
